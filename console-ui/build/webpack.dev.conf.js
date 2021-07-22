@@ -34,12 +34,12 @@ module.exports = Object.assign({}, base, {
     path: path.resolve(__dirname, '../dist'),
   },
   devServer: {
-    port: process.env.PORT || 8000,
+    port: process.env.PORT || 8000,  //前端启动端口
     proxy: [{
       context: ['/'],
       changeOrigin: true,
       secure: false,
-      target: 'http://localhost:8848',
+      target: 'http://localhost:18848',//调用的后台地址
       pathRewrite: {'^/v1' : '/nacos/v1'}
     }],
     disableHostCheck: true,

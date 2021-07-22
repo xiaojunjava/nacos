@@ -1,0 +1,12 @@
+### 个人研究用
+* 前后台地址端口映射配置
+    + webpack.dev.conf.js
+* nacos配置列表对应
+    + console-ui/src/pages/ConfigurationManagement/ConfigurationManagement/ConfigurationManagement.js
+    + config/src/main/java/com/alibaba/nacos/config/server/service/repository/extrnal/ExternalStoragePersistServiceImpl.java
+        - findConfigInfosByIds()
+* mysql连接本地
+    + console/src/main/resources/application.properties
+        - 其中的serverTimezone=Asia/Shanghai
+* 测试配置列表页添加更新时间字段（默认显示的列太少、排序不方便以至于操作不友好）
+    + ConfigInfo中加字段属性

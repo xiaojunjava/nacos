@@ -77,6 +77,7 @@ class ConfigurationManagement extends React.Component {
     this.preGroup = this.group;
     this.dataId = getParams('dataId') || '';
     this.preDataId = this.dataId;
+    this.gmtModified = getParams('gmtModified') || '';
     this.serverId = getParams('serverId') || 'center';
     this.edasAppId = getParams('edasAppId') || '';
     this.edasAppName = getParams('edasAppName') || '';
@@ -85,13 +86,14 @@ class ConfigurationManagement extends React.Component {
       value: '',
       visible: false,
       total: 0,
-      pageSize: getParams('pageSize') ? getParams('pageSize') : 10,
+      pageSize: getParams('pageSize') ? getParams('pageSize') : 20,
       currentPage: 1,
       dataSource: [],
       fieldValue: [],
       showAppName: false,
       showgroup: false,
       dataId: this.dataId,
+      gmtModified: this.gmtModified,
       group: this.group,
       appName: this.appName,
       config_tags: [],
@@ -603,7 +605,7 @@ class ConfigurationManagement extends React.Component {
           <div style={{ marginTop: '-20px' }}>
             <h3>{locale.sureDelete}</h3>
             <Table dataSource={toShowDatas}>
-              <Table.Column title="Data Id" dataIndex="dataId" />
+              <Table.Column title="Data Id111" dataIndex="dataId" />
               <Table.Column title="Group" dataIndex="group" />
             </Table>
           </div>
@@ -830,7 +832,7 @@ class ConfigurationManagement extends React.Component {
               </div>
               <Table dataSource={editableTableData}>
                 <Table.Column
-                  title="Data Id"
+                  title="Data Id222"
                   dataIndex="dataId"
                   cell={renderEditableTableCellDataId}
                 />
@@ -874,7 +876,7 @@ class ConfigurationManagement extends React.Component {
                   {locale.failureEntries}: {failCount}
                 </h5>
                 <Table dataSource={ret.data.failData}>
-                  <Table.Column title="Data Id" dataIndex="dataId" />
+                  <Table.Column title="Data Id333" dataIndex="dataId" />
                   <Table.Column title="Group" dataIndex="group" />
                 </Table>
               </div>
@@ -883,7 +885,7 @@ class ConfigurationManagement extends React.Component {
                   {locale.unprocessedEntries}: {skipCount}
                 </h5>
                 <Table dataSource={ret.data.skipData}>
-                  <Table.Column title="Data Id" dataIndex="dataId" />
+                  <Table.Column title="Data Id444" dataIndex="dataId" />
                   <Table.Column title="Group" dataIndex="group" />
                 </Table>
               </div>
@@ -912,7 +914,7 @@ class ConfigurationManagement extends React.Component {
                   {locale.skippedEntries}: {skipCount}
                 </h5>
                 <Table dataSource={ret.data.skipData}>
-                  <Table.Column title="Data Id" dataIndex="dataId" />
+                  <Table.Column title="Data Id555" dataIndex="dataId" />
                   <Table.Column title="Group" dataIndex="group" />
                 </Table>
               </div>
@@ -1261,6 +1263,7 @@ class ConfigurationManagement extends React.Component {
             >
               <Table.Column sortable={true} title={'Data Id'} dataIndex={'dataId'} />
               <Table.Column sortable={true} title={'Group'} dataIndex={'group'} />
+              <Table.Column sortable={true} title={'更新时间'} dataIndex={'gmtModified'} />
               {!this.inApp && (
                 <Table.Column sortable={true} title={locale.application} dataIndex="appName" />
               )}
